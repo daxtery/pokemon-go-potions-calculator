@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    table {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table td,
+    table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ola</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <input maxlength="3" id="why" oninput="onHPChanged()" value="100" />
+    <br>
+    <br>
+    <table id="tableboy">
+        <tr>
+            <th>Type</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Potion</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Super Potion</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Hyper Potion</td>
+            <td>0</td>
+        </tr>
+    </table>
+</body>
+
+</html>
