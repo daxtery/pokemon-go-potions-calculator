@@ -22,9 +22,9 @@ onHPChanged = function () {
     if (typeof (hp) == "string") {
         hp = parseInt(hp);
 
-        if (typeof (hp) == "string") return;
+        if (typeof (hp) == "string") hp = 0;
     }
-    
+
     maxHp = maxHp.replace(/\s/g, '');
 
     if (maxHp === "") return;
@@ -32,12 +32,12 @@ onHPChanged = function () {
     if (typeof (maxHp) == "string") {
         maxHp = parseInt(maxHp);
 
-        if (typeof (maxHp) == "string") return;
+        if (typeof (maxHp) == "string") maxHp = 0;
     }
-    
+
     hpMissing = maxHp - hp;
-    
-    if(hpMissing <= 0) return;
+
+    if (hpMissing < 0) hpMissing = 0;
 
     newWay(pots, hpMissing);
     let amounts = getThemInOrder(pots);
