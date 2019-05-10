@@ -12,17 +12,32 @@ let potionsAt = new Array(1000).fill(-1);
 let table;
 
 onHPChanged = function () {
-    hpMissing = document.getElementById("why").value;
+    hp = document.getElementById("hp").value;
+    maxHp = document.getElementById("maxhp").value;
 
-    hpMissing = hpMissing.replace(/\s/g, '');
+    hp = hp.replace(/\s/g, '');
 
-    if (hpMissing === "") return;
+    if (hp === "") return;
 
-    if (typeof (hpMissing) == "string") {
-        hpMissing = parseInt(hpMissing);
+    if (typeof (hp) == "string") {
+        hp = parseInt(hp);
 
-        if (typeof (hpMissing) == "string") return;
+        if (typeof (hp) == "string") hp = 0;
     }
+
+    maxHp = maxHp.replace(/\s/g, '');
+
+    if (maxHp === "") return;
+
+    if (typeof (maxHp) == "string") {
+        maxHp = parseInt(maxHp);
+
+        if (typeof (maxHp) == "string") maxHp = 0;
+    }
+
+    hpMissing = maxHp - hp;
+
+    if (hpMissing < 0) hpMissing = 0;
 
     newWay(pots, hpMissing);
     let amounts = getThemInOrder(pots);
