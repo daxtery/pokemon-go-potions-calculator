@@ -23,6 +23,7 @@ onHPChanged = function () {
         hp = parseInt(hp);
 
         if (typeof (hp) == "string") hp = 0;
+        else if (hp < 0) hp = 0;
     }
 
     maxHp = maxHp.replace(/\s/g, '');
@@ -33,12 +34,9 @@ onHPChanged = function () {
         maxHp = parseInt(maxHp);
 
         if (typeof (maxHp) == "string") maxHp = 0;
+        else if (maxHp < 0) maxHp = 0;
     }
     
-    if (maxHp < 0) maxHp = 0;
-    
-    if (hp < 0) hp = 0;
-
     hpMissing = maxHp - hp;
 
     if (hpMissing < 0) hpMissing = 0;
