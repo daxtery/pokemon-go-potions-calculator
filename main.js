@@ -93,13 +93,9 @@ getThemInOrder = function (pots) {
 
     while (currentHP > 0) {
         let pot = pots[potionsAt[currentHP]];
-        // console.log(pot);
         potsByOrder[potionsAt[currentHP]]++;
         currentHP = currentHP - pot;
     }
-
-    // console.table(array);
-    // console.table(potsByOrder);
 
     return potsByOrder;
 }
