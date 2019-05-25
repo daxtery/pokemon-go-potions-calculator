@@ -34,6 +34,10 @@ onHPChanged = function () {
 
         if (typeof (maxHp) == "string") maxHp = 0;
     }
+    
+    if (maxHp < 0) maxHp = 0;
+    
+    if (hp < 0) hp = 0;
 
     hpMissing = maxHp - hp;
 
