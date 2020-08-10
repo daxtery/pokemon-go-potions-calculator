@@ -38,8 +38,11 @@
 </head>
 
 <body>
-    <input maxlength="3" id="hp" oninput="onHPChanged()" value="100" />
-    <input maxlength="3" id="maxhp" oninput="onHPChanged()" value="100" />
+    <label for="hp">Current Health</label>
+    <input maxlength="3" id="hp" oninput="onHPChanged()" value="100">
+
+    <label for="maxhp">Max Health</label>
+    <input maxlength="3" id="maxhp" oninput="onHPChanged()" value="100">
     <br>
     <br>
     <table id="tableboy">
